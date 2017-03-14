@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309153257) do
+ActiveRecord::Schema.define(version: 20170313075901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "insurances", force: :cascade do |t|
+    t.string   "time"
+    t.string   "temperature"
+    t.string   "heater"
+    t.string   "pressure_heater"
+    t.string   "pressure_valve"
+    t.string   "flow_rate_valve"
+    t.string   "waterlevel_tank"
+    t.string   "OEE_waterflow"
+    t.string   "OEE_heater"
+    t.string   "OEE_valve"
+    t.string   "Overall_OEE"
+    t.string   "predicted_OEE"
+    t.string   "Upper_range"
+    t.string   "lower_range"
+    t.string   "premium"
+    t.string   "stability"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

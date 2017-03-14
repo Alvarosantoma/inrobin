@@ -1,2 +1,80 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--   <div class="container">
+    <h1>Pages#home</h1>
+    <p>Find me in app/views/pages/home.html.erb</p>
+
+
+
+  </div> -->
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="chart.js"></script>
+</head>
+<body>
+
+
+
+<div class="container">
+  <h2>Inrobin</h2>
+  <p>Insurer</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Temperature Heater</th>
+        <th>Presure Heater</th>
+        <th>Pressure Valve</th>
+        <th>Flow Rate Valve</th>
+        <th>WaterLevel Tank</th>
+        <th>OEE Heater</th>
+        <th>OEE Valve</th>
+        <th>Overall OEE</th>
+        <th>Predicted OEE</th>
+        <th>Upper Bond</th>
+        <th>Lower Bond</th>
+        <th>Production Value</th>
+        <th>Loss</th>
+        <th>Daily Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="info">
+        <% @row.each do |el| %>
+          <td><%= el %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <form action="/" method="get" id="reloader">
+    <input type="hidden" name="index" value="<%= @i %>">
+    <input type="submit" value="send">
+  </form>
+</div>
+
+<%= image_tag("grafico.png")  %>
+
+</body>
+<script>
+  $(document).ready(function() {
+
+    setTimeout(function(){
+      $( "#reloader" ).submit();
+    }, 5000);
+  });
+  var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: options
+});
+</script>
+</html>
+
