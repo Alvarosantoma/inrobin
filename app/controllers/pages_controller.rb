@@ -8,11 +8,11 @@ class PagesController < ApplicationController
     #
     @i = 1
     @i += params[:index].to_i if params[:index]
-    @overall_oee = overall_oee(@i)
-    @predicted__oee = predicted__oee(@i)
-    @upper__range = upper__range(@i)
-    @lower__range = lower__range(@i)
-    @time = time(@i)
+    # @overall_oee = overall_oee(@i)
+    # @predicted__oee = predicted__oee(@i)
+    # @upper__range = upper__range(@i)
+    # @lower__range = lower__range(@i)
+    # @time = time(@i)
     @row = CSV.read("#{Rails.root}/lib/assets/Final_Data1.csv")[@i]
     # @overall_oee = overall_oee(i)
     respond_to do |format|
@@ -33,7 +33,7 @@ class PagesController < ApplicationController
         overall_oee.flatten
       end
     else
-      raise
+      # raise
       overall_oee = overall_oee[1..100]
       value = CSV.read("#{Rails.root}/lib/assets/Final_Data1.csv")[i][9]
       overall_oee.append
