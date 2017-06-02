@@ -6,8 +6,8 @@ class PagesController < ApplicationController
 
     # CONTROLLER
     #
-    @i = 50
-    @i = @i + params[:index].to_i if params[:index]
+    @i = 99
+    @i = 1 + params[:index].to_i if params[:index]
     # @overall_oee = overall_oee(@i)
     # @predicted__oee = predicted__oee(@i)
     # @upper__range = upper__range(@i)
